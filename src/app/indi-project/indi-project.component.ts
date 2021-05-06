@@ -22,12 +22,12 @@ export class IndiProjectComponent implements OnInit, AfterViewInit {
   factor: number = document.body.clientWidth / (document.body.clientWidth + 100*27);
 
   logos: any = {
-    'Flutter':    '/assets/logos/flutter-logo.png',
-    'Angular':    '/assets/logos/angular-logo.png',
-    'Golang':     '/assets/logos/golang-logo.png',
-    'HTML':       '/assets/logos/html-logo.png',
-    'CSS':        '/assets/logos/css-logo.png',
-    'JavaScript': '/assets/logos/js-logo.png'
+    'Flutter':    'https://i.ibb.co/n0b4Xq6/flutter-logo.png',
+    'Angular':    'https://i.ibb.co/N1vBGVv/angular-logo.png',
+    'Golang':     'https://i.ibb.co/FWFBFFj/golang-logo.png',
+    'HTML':       'https://i.ibb.co/M786kxb/html-logo.png',
+    'CSS':        'https://i.ibb.co/Kxwcrnn/css-logo.png',
+    'JavaScript': 'https://i.ibb.co/jvQxWXn/js-logo.png'
   };
 
   // logo: [width, height]
