@@ -1,0 +1,55 @@
+<div class="content">
+
+    <div class="info">
+        <p class="tit">{{ project.title }}</p>
+
+        <p class="desc">{{ project.desc }}</p>
+        
+        <p class="tit2">Tecnologías</p>
+        <div class="tec">
+            
+            <table>
+                <tr>
+                    <th class="logo" *ngFor="let lang of project.langs">
+                        <img
+                        src="{{ logos[lang] }}"
+                        width="{{ logoResolutions[lang][0] }}"
+                        height="{{ logoResolutions[lang][1] }}">
+                    </th>
+                </tr>
+                <tr>
+                    <td class="logo" *ngFor="let lang of project.langs">
+                        <p class="logo">{{ lang }}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- <div class="row">
+                <div class="col" *ngFor="let lang of project.langs">
+                    <img
+                    src="{{ logos[lang] }}"
+                    width="{{ logoResolutions[lang][0] }}"
+                    height="{{ logoResolutions[lang][1] }}"
+                    class="logo">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col" *ngFor="let lang of project.langs">
+                    <p class="logo">{{ lang }}</p>
+                </div>
+            </div> -->
+
+        </div>
+
+    </div>
+
+    <div class="slideshow-container" [ngStyle]="{'width': contSizeW+'%'}">
+
+        <div class="numbertext">{{ slideIdx }} / {{ project.imgs.length }}</div>
+
+        <div class="mySlides fade" #imgload *ngFor="let img of project.imgs" (click)="plusSlides(1)">
+            <img src="{{ img }}" width="{{ imgWidth }}" height="{{ imgHeight }}" class="aco">
+        </div>
+    </div>
+</div>

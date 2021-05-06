@@ -1,0 +1,7 @@
+{
+    "/": {
+        "target":  "https://fast-river-42170.herokuapp.com",
+        "secure": false,
+        "changeOrigin": false
+    }
+}

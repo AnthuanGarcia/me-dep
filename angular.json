@@ -33,7 +33,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/utils/effectFar.js",
+              "src/app/utils/effectRGB.js",
+              "src/app/utils/TweenLite.js",
+              "src/app/utils/three.min.js",
+              "src/app/utils/auxNum.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -53,8 +59,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -96,7 +102,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/utils/effectFar.js",
+              "src/app/utils/effectRGB.js"
+            ]
           }
         },
         "lint": {
@@ -123,9 +132,16 @@
               "devServerTarget": "presentation:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "presentation"
+  "defaultProject": "presentation",
+  "cli": {
+    "analytics": "c576281c-bcca-4583-9b5f-833bf4fcd9d3"
+  }
 }
