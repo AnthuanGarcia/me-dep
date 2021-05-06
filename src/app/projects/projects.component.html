@@ -1,10 +1,16 @@
 <div class="conte">
     <div class="grid">
-        <div class="grid-items" #load *ngFor="let project of data; let i = index">
-            <a class="link" (click)="loadPro(project)" routerLink="/individual">
-                <h1>{{ project.title }}</h1>
-                <img class="content__img" src="{{ project.imgs[0] }}" alt="" style="width: 0; height: 0;">
-            </a>
+        <div class="grid-items" *ngIf="data === undefined">
+            <img src="../../assets/resources/load.gif" alt="Cargando..." srcset="" width="150" height="150">
+        </div>
+
+        <div *ngIf="data !== undefined">
+            <div class="grid-items" #load *ngFor="let project of data; let i = index">
+                <a class="link" (click)="loadPro(project)" routerLink="/individual">
+                    <h1>{{ project.title }}</h1>
+                    <img class="content__img" src="{{ project.imgs[0] }}" alt="" style="width: 0; height: 0;">
+                </a>
+            </div>
         </div>
     </div>
 </div>

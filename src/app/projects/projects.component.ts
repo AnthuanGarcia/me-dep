@@ -17,7 +17,7 @@ declare var THREE: any
 export class ProjectsComponent implements OnInit, AfterViewInit {
   @ViewChildren('load') imags!: QueryList<any>;
 
-  data: any;
+  data: any = undefined;
   
   constructor(
     private projects: ProjectsService,
