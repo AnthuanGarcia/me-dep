@@ -133,7 +133,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
       this.fragmentShader,
       'app-contact',
       '#c4',
-      'noise.png'
+      'https://i.ibb.co/Vp6NnG8/noise.png'
     );
 
     interval(2000).subscribe(() => {

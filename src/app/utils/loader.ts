@@ -19,7 +19,7 @@ export function main(shader: string, selector: string, id: string, img: string |
 
     if (img !== null) {
       const loader = new THREE.TextureLoader();
-      const texture = loader.load(`../../assets/textures/${img}`);
+      const texture = loader.load(img);
 
       uniforms = {
         iTime: { value:0 },
