@@ -19,7 +19,9 @@ export class IndiProjectComponent implements OnInit, AfterViewInit {
 
   contSizeW: number = 0;
 
-  factor: number = document.body.clientWidth / (document.body.clientWidth + 100*27);
+  factor: number = document.body.clientWidth / (document.body.clientWidth + 100*25);
+
+  mobil: boolean = document.body.clientWidth <= 768;
 
   logos: any = {
     'Flutter':    'https://i.ibb.co/n0b4Xq6/flutter-logo.png',
@@ -32,12 +34,12 @@ export class IndiProjectComponent implements OnInit, AfterViewInit {
 
   // logo: [width, height]
   logoResolutions: any = {
-    'Flutter':    [60.5, 75],
-    'Angular':    [900 / 10,  900 / 10],
-    'Golang':     [1200 / 10, 451 / 10],
-    'HTML':       [750 / 10, 1245 / 10],
-    'CSS':        [750 / 10, 1245 / 10],
-    'JavaScript': [225 * .4, 225  * .4],
+    'Flutter':    [this.mobil ? 50 : 60.5,      this.mobil ? 65 : 75],
+    'Angular':    [this.mobil ? 75 : 900 / 10,  this.mobil ? 75 : 900 / 10],
+    'Golang':     [this.mobil ? 90 : 1200 / 10, this.mobil ? 35 : 451 / 10],
+    'HTML':       [this.mobil ? 65 : 750 / 10,  this.mobil ? 95 : 1245 / 10],
+    'CSS':        [this.mobil ? 65 : 750 / 10,  this.mobil ? 95 : 1245 / 10],
+    'JavaScript': [this.mobil ? 70 : 225 * .4,  this.mobil ? 70 : 225  * .4],
   }
 
   constructor(private proj: NodeService) {

@@ -10,6 +10,8 @@ import { main } from '../utils/loader';
 })
 export class ProfileComponent implements OnInit {
   num: number = 0;
+  wid: number = document.body.clientWidth <= 768 ? 30 : 50;
+  hei: number = document.body.clientWidth <= 768 ? 80 : 40;
 
   fragmentShader = `
     uniform vec3      iResolution;           // viewport resolution (in pixels)
@@ -115,12 +117,13 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //let sum = document.body.clientWidth >= 600 ? 5 : 10;
     main(this.fragmentShader, 'app-root', '#c');
 
     const getRandInt = (max: number) => Math.floor(Math.random() * max);
 
     interval(3000).subscribe(() => {
-      this.num = getRandInt(10+1);
+      this.num = getRandInt(8+1);
     })
   }
 

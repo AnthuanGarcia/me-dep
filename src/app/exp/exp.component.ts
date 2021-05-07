@@ -10,6 +10,8 @@ import { main } from '../utils/loader';
 })
 export class ExpComponent implements OnInit {
   num: number = 0;
+  wid: number = document.body.clientWidth <= 768 ? 65 : 35;
+  hei: number = document.body.clientWidth <= 768 ? 45 : 78;
 
   constructor() {}
 

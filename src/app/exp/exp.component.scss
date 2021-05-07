@@ -17,6 +17,25 @@
     .details {
         font-size: 20px;
     }
+
+    @media screen and (max-width: 768px) {
+        .tit {
+            font-size: 9vw;
+            margin-bottom: 2.5rem;
+        }
+
+        .details {
+            font-size: 4vw;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .desc {
+        width: 80vw;
+        top: 10%;
+        right: 15%;
+    }
 }
 
 #c2 {
@@ -27,7 +46,11 @@
     transition: 1.4s;
 }
 
-#c2:hover {
-    width: 36vw;
-    height: 79vh;
+@media screen and (max-width: 768px) {
+    #c2 {
+        width: 65vw;
+        height: 45vh;
+        margin: 10% 8%;
+        margin-left: 20%;
+    }
 }
