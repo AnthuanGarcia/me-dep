@@ -9,6 +9,10 @@
     align-items: center;
     align-content: center;
 
+    .expand {
+        padding: 0 2.5%;
+    }
+
     .log {
         position: absolute;
         display: flex;
@@ -62,6 +66,7 @@
         .expand {
             margin-top: 37%;
             font-size: 4vw;
+            padding: 0;
         }
 
         #c4 {
