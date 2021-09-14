@@ -29,7 +29,9 @@ export class IndiProjectComponent implements OnInit, AfterViewInit {
     'Golang':     'https://i.ibb.co/FWFBFFj/golang-logo.png',
     'HTML':       'https://i.ibb.co/M786kxb/html-logo.png',
     'CSS':        'https://i.ibb.co/Kxwcrnn/css-logo.png',
-    'JavaScript': 'https://i.ibb.co/jvQxWXn/js-logo.png'
+    'JavaScript': 'https://i.ibb.co/jvQxWXn/js-logo.png',
+    'Csharp':     'https://i.ibb.co/c6NMHsY/c-sharp-c-logo-02-F17714-BA-seeklogo-com.png',
+    'Unity':      'https://i.ibb.co/BwcVN6R/218-2186770-tip-create-a-rotating-sun-alex-dunn-graphic.png'
   };
 
   // logo: [width, height]
@@ -40,6 +42,8 @@ export class IndiProjectComponent implements OnInit, AfterViewInit {
     'HTML':       [this.mobil ? 65 : 750 / 10,  this.mobil ? 95 : 1245 / 10],
     'CSS':        [this.mobil ? 65 : 750 / 10,  this.mobil ? 95 : 1245 / 10],
     'JavaScript': [this.mobil ? 70 : 225 * .4,  this.mobil ? 70 : 225  * .4],
+    'Csharp':     [this.mobil ? 70 : 225 * .4,  this.mobil ? 70 : 225  * .4],
+    'Unity':      [this.mobil ? 70 : 225 * .4,  this.mobil ? 70 : 225  * .4]
   }
 
   constructor(private proj: NodeService) {
@@ -49,8 +53,8 @@ export class IndiProjectComponent implements OnInit, AfterViewInit {
     this.proj.data$.subscribe(res => {
       this.project = res;
 
-      if (res.title == "ArduRemote") resolutionW = 1080, resolutionH = 1920;
-      else if (res.title == "IMCH") resolutionW = 1370, resolutionH = 660;
+      if (res.mobil) resolutionW = 1080, resolutionH = 1920;
+      else resolutionW = 1370, resolutionH = 660;
 
       this.imgWidth = resolutionW * this.factor;
       this.imgHeight = resolutionH * this.factor;
