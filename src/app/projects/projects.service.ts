@@ -17,6 +17,6 @@ export class ProjectsService {
     constructor(private http: HttpClient){}
 
     getProjects() {
-        return this.http.get<any>('https://fast-river-42170.herokuapp.com/getPro', httpOptions);
+        return this.http.get<any>('assets/projects.json');
     }
 }

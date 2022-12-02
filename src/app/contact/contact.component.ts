@@ -21,7 +21,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     uniform vec4      iDate;                 // (year, month, day, time in seconds)
     uniform float     iSampleRate;           // sound sample rate (i.e., 44100)
 
-    const int octaves = 6;
+    const int octaves = 4;
 
     vec2 random2(vec2 st){
       vec2 t = vec2(texture(iChannel0, st/1023.).x, texture(iChannel0, st/1023.+.5).x);
@@ -59,16 +59,15 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
     float pattern(vec2 uv, float time, inout vec2 q, inout vec2 r) {
 
-      q = vec2( fbm1( uv * .1 + vec2(0.0,0.0) ),
-                    fbm1( uv + vec2(5.2,1.3) ) );
-
       r = vec2( fbm1( uv * .1 + 4.0*q + vec2(1.7 - time / 2.,9.2) ),
                     fbm1( uv + 4.0*q + vec2(8.3 - time / 2.,2.8) ) );
 
-      vec2 s = vec2( fbm1( uv + 5.0*r + vec2(21.7 - time / 2.,90.2) ),
-                    fbm1( uv * .05 + 5.0*r + vec2(80.3 - time / 2.,20.8) ) ) * .25;
+      q = r * fbm1(uv + vec2(time, 0.33));
 
-      return fbm1( uv * .05 + 4.0 * s );
+      //vec2 s = vec2( fbm1( uv + 5.0*r + vec2(21.7 - time / 2.,90.2) ),
+      //              fbm1( uv * .05 + 5.0*r + vec2(80.3 - time / 2.,20.8) ) ) * .25;
+
+      return fbm1( uv * .05 + 4.0 );
     }
 
 
